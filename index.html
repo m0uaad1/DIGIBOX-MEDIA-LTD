@@ -1,229 +1,422 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="el">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HUNANIMA — Machines Agricoles Simples</title>
-  <meta name="description" content="HUNANIMA — machines agricoles simples et fiables. Récolte, fourrage et outils pour petites parcelles avec support clair et prix équitable."/>
-  <style>
-    :root{
-      --primary:#1B7F3A;   /* Vert */
-      --accent:#FFD300;    /* Jaune */
-      --nav:#0E4D25;       /* Vert foncé */
-      --ink:#0b0b0b;
-      --muted:#58636f;
-      --card:#ffffff;
-      --bg:#ffffff;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{max-width:1100px;margin:0 auto;padding:24px}
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>DIGIBOX MEDIA LTD — Digital Media & Creative Studio • Λεμεσός, Κύπρος</title>
 
-    /* Header */
-    header{background:var(--nav); color:#fff; position:sticky; top:0; z-index:10; box-shadow:0 6px 18px rgba(0,0,0,.08)}
-    .topbar{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 24px}
-    .brand{font-weight:900; letter-spacing:.35px}
-    nav a{display:inline-block; padding:10px 14px; border-radius:12px; color:#eaffea; font-weight:700}
-    nav a:hover{background:rgba(255,255,255,.12)}
-    .cta-btn{background:var(--accent); color:#1a1500; padding:10px 14px; border-radius:12px; font-weight:800}
+<meta name="description" content="DIGIBOX MEDIA LTD στη Λεμεσό — Digital καμπάνιες, social media, παραγωγή περιεχομένου, websites και δημιουργικές λύσεις για brands στην Κύπρο & διεθνώς." />
+<meta name="robots" content="index,follow" />
 
-    /* Hero (animated card) */
-    .hero-wrap{background:linear-gradient(180deg,#ffffff,#f2fff6); padding:42px 24px}
-    .hero-card{
-      background:var(--card); border:1px solid rgba(0,0,0,.06); border-radius:22px;
-      box-shadow:0 30px 60px rgba(0,0,0,.12); padding:28px;
-      display:grid; grid-template-columns:1.15fr .85fr; gap:22px; overflow:hidden;
-      transform:translateY(24px); opacity:0; animation:cardIn .9s ease-out .15s forwards;
-    }
-    @keyframes cardIn{to{transform:translateY(0);opacity:1}}
-    .hero-badge{display:inline-flex; align-items:center; gap:10px; background:#0e3a1d; color:var(--accent); padding:6px 12px; border-radius:999px; font-size:.9rem; font-weight:800}
-    .hero-title{font-size:clamp(26px,4vw,42px); line-height:1.15; margin:14px 0 10px; font-weight:900}
-    .hero-title .grad{background:linear-gradient(90deg,var(--primary),#2fc368); -webkit-background-clip:text; color:transparent}
-    .hero-sub{font-size:1.02rem; color:#2f3540}
-    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px}
-    .btn{border:2px solid #0e3a1d; color:#fff; background:#0e3a1d; padding:12px 18px; border-radius:14px; font-weight:800}
-    .btn:hover{transform:translateY(-1px); box-shadow:0 8px 16px rgba(0,0,0,.15)}
-    .btn.secondary{background:var(--accent); color:#1a1500; border-color:var(--accent)}
-    .hero-media{border-radius:18px; overflow:hidden; aspect-ratio:4/3; background:#f6fff8;
-      display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:8px}
-    .hero-media img{object-fit:cover; width:100%; height:100%}
+<meta property="og:title" content="DIGIBOX MEDIA LTD — Digital Media Agency" />
+<meta property="og:description" content="Σύγχρονο agency για social media, campaigns, video & creative content στη Λεμεσό." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://avatars.mds.yandex.net/get-znatoki/470774/2a00000182a6523df4016ec5dcc5c66a4efc/orig" />
+<meta property="og:locale" content="el_CY" />
 
-    /* Sections */
-    section{padding:56px 24px}
-    section h2{font-size:clamp(22px,3vw,32px); margin:0 0 14px; font-weight:900}
-    .muted{color:var(--muted)}
+<link rel="icon" href="https://avatars.mds.yandex.net/get-znatoki/470774/2a00000182a6523df4016ec5dcc5c66a4efc/orig">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
 
-    /* Cards */
-    .cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px}
-    .card{border:1px solid rgba(0,0,0,.06); border-radius:16px; padding:16px; background:#fff; box-shadow:0 8px 24px rgba(0,0,0,.06);
-      transform:translateY(14px); opacity:0}
-    .card.reveal{animation:reveal .7s ease-out forwards}
-    @keyframes reveal{to{transform:translateY(0); opacity:1}}
+<style>
+  :root{
+    --primary:#2563eb;   /* μπλε digital */
+    --accent:#22c55e;    /* πράσινο neon */
+    --ink:#020817;       /* σκούρο */
+    --bg:#020817;        /* dark mode */
+    --card:#0b1020;
+    --white:#ffffff;
+    --text:#e5e7eb;
+    --muted:#9ca3af;
+    --border:#111827;
+    --pill:#0f172a;
+  }
 
-    /* Gallery */
-    .gallery{display:grid; grid-template-columns:repeat(2,1fr); gap:12px}
-    .gallery img{border-radius:14px; aspect-ratio:4/3; object-fit:cover}
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    background:var(--bg);
+    color:var(--text);
+  }
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{opacity:.9;}
 
-    /* Formula */
-    .formula{border-left:6px solid var(--accent); background:#fff9ce; padding:16px 18px; border-radius:12px}
-    .formula ol{margin:0; padding-left:18px}
-    .formula li{margin:8px 0}
+  /* HEADER */
+  header{
+    background:radial-gradient(circle at top,#111827,#020817);
+    padding:22px 16px 18px;
+    border-bottom:3px solid var(--primary);
+  }
+  .wrap{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 14px;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .brand img{
+    width:56px;
+    height:56px;
+    border-radius:16px;
+    border:2px solid var(--primary);
+    object-fit:cover;
+    background:#020817;
+  }
+  .brand h1{
+    margin:0;
+    font-size:1.9rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:#f9fafb;
+  }
+  .tagline{
+    margin:4px 0 0;
+    font-size:.9rem;
+    color:#93c5fd;
+  }
 
-    /* Contact */
-    .contact-box{background:var(--primary); color:#fff; border-radius:18px; padding:20px; display:grid; gap:8px; border:1px solid rgba(0,0,0,.12)}
-    .contact-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:6px}
-    .contact-actions a{display:inline-block; background:var(--accent); color:#1a1500; padding:10px 14px; border-radius:12px; font-weight:800}
+  /* NAV */
+  nav{
+    background:#020817;
+    border-bottom:1px solid var(--border);
+  }
+  .navwrap{
+    max-width:1120px;
+    margin:0 auto;
+    padding:8px 14px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+  }
+  nav a{
+    padding:7px 14px;
+    border-radius:999px;
+    font-weight:500;
+    font-size:.86rem;
+    color:#e5e7eb;
+    border:1px solid transparent;
+  }
+  nav a:hover{
+    border-color:var(--primary);
+    background:rgba(37,99,235,0.08);
+  }
 
-    footer{background:#0e3a1d; color:var(--accent); padding:18px; text-align:center; font-weight:700}
+  /* HERO */
+  .hero{
+    max-width:1120px;
+    margin:26px auto 20px;
+    padding:0 14px;
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:22px;
+    align-items:center;
+  }
+  .hero img{
+    width:100%;
+    border-radius:18px;
+    border:2px solid var(--border);
+    object-fit:cover;
+    box-shadow:0 16px 40px rgba(0,0,0,.6);
+  }
+  .panel{
+    background:var(--card);
+    border-radius:18px;
+    padding:18px 18px 16px;
+    border:1px solid var(--border);
+  }
+  .panel h2{
+    margin:0 0 8px;
+    font-size:1.55rem;
+    color:#eff6ff;
+  }
+  .panel p{
+    margin:0 0 10px;
+    font-size:.9rem;
+    color:var(--muted);
+  }
+  .tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    margin-bottom:10px;
+  }
+  .pill{
+    padding:4px 11px;
+    border-radius:999px;
+    border:1px solid #1d4ed8;
+    font-size:.72rem;
+    background:var(--pill);
+    color:#bfdbfe;
+  }
+  .pill.green{
+    border-color:#22c55e;
+    color:#bbf7d0;
+  }
+  .cta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:4px;
+  }
+  .btn{
+    padding:9px 18px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:.84rem;
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    border:none;
+    cursor:pointer;
+    background:var(--primary);
+    color:#eff6ff;
+  }
+  .btn.secondary{
+    background:transparent;
+    color:var(--accent);
+    border:1px solid var(--accent);
+  }
 
-    @media (max-width:820px){
-      .hero-card{grid-template-columns:1fr; padding:20px}
-      .gallery{grid-template-columns:1fr}
-    }
-  </style>
+  /* SECTIONS */
+  .section{
+    max-width:1120px;
+    margin:18px auto;
+    padding:18px 18px 16px;
+    border-radius:16px;
+    background:var(--card);
+    border:1px solid var(--border);
+    box-shadow:0 10px 30px rgba(0,0,0,.55);
+  }
+  .section h2{
+    margin:0 0 8px;
+    font-size:1.22rem;
+    color:#e5e7eb;
+  }
+  .section p{
+    margin:4px 0 8px;
+    font-size:.86rem;
+    color:var(--muted);
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:10px;
+    margin-top:6px;
+  }
+  .card{
+    padding:10px;
+    border-radius:12px;
+    border:1px solid var(--border);
+    background:#050816;
+  }
+  .card h3{
+    margin:0 0 4px;
+    font-size:.94rem;
+    color:#bfdbfe;
+  }
+  .card p{
+    margin:0;
+    font-size:.78rem;
+    color:var(--muted);
+  }
+
+  /* GALLERY */
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:10px;
+    margin-top:6px;
+  }
+  .gallery img{
+    width:100%;
+    border-radius:14px;
+    border:2px solid var(--border);
+    object-fit:cover;
+    aspect-ratio:16/9;
+    background:#000;
+    box-shadow:0 10px 26px rgba(0,0,0,.7);
+  }
+
+  .contact-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:12px;
+    margin-top:4px;
+  }
+
+  footer{
+    margin-top:24px;
+    padding:14px 10px 18px;
+    text-align:center;
+    font-size:.76rem;
+    background:#020817;
+    color:#6b7280;
+    border-top:2px solid var(--primary);
+  }
+
+  @media(max-width:840px){
+    .hero{grid-template-columns:1fr;}
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"AdvertisingAgency",
+  "name":"DIGIBOX MEDIA LTD",
+  "email":"support@alvarixt.shop",
+  "telephone":"+357-96513262",
+  "url":"https://example.com",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"Αγίας Φυλάξεως & Ζήνωνος Ρωσσίδη, 2, Floor 1, 3082",
+    "addressLocality":"Λεμεσός",
+    "addressCountry":"CY"
+  },
+  "image":[
+    "https://avatars.mds.yandex.net/get-znatoki/470774/2a00000182a6523df4016ec5dcc5c66a4efc/orig",
+    "https://avatars.mds.yandex.net/i?id=fb0551cde3223499101152278d42db50be8ee87e-4504218-images-thumbs&n=13",
+    "https://avatars.mds.yandex.net/i?id=9534f66f3e4cdd702934999cd0f6891fc26c1106-12683358-images-thumbs&n=13"
+  ],
+  "description":"Digital media, social campaigns, performance & δημιουργικό περιεχόμενο για brands."
+}
+</script>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="topbar container">
-      <div class="brand">HUNANIMA</div>
-      <nav>
-        <a href="#about">À propos</a>
-        <a href="#products">Produits</a>
-        <a href="#gallery">Galerie</a>
-        <a href="#formula">Notre Formule</a>
-        <a href="#contact" class="cta-btn">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <div class="hero-wrap">
-    <div class="container">
-      <div class="hero-card">
-        <div>
-          <span class="hero-badge">Machines Agricoles Simples</span>
-          <h1 class="hero-title">Travaillez malin. <span class="grad">Faites croître sûrement.</span></h1>
-          <p class="hero-sub">Équipements compacts, fiables et faciles à entretenir pour petites et moyennes exploitations — récolte, fourrage et manutention simplifiés.</p>
-          <div class="hero-actions">
-            <a class="btn" href="#products">Découvrir nos Produits</a>
-            <a class="btn secondary" href="#contact">Demander un Devis</a>
-          </div>
-          <p class="muted" style="margin-top:10px;">
-            Avenue Baratier, 95160 Montmorency • +33 7 38 50 26 36 • admin@tyusex.shop
-          </p>
-        </div>
-        <div class="hero-media">
-          <img src="https://i.pinimg.com/550x/a9/df/51/a9df5172829f8c05f5b92f97553d41ae.jpg" alt="Champ & tracteur">
-          <img src="http://ogden_images.s3.amazonaws.com/www.motherearthnews.com/images/2014/11/22234423/Boaz-Mini-Combine-jpg.jpg" alt="Mini moissonneuse">
-          <img src="https://krs-agro.ru/products/zagotovka_kormov/elho/19/7.jpg" alt="Outil de fourrage">
-          <img src="https://img.mod-network.net/files/images/6218ac69d37fb/SimpleFarmSilov1000_6222.jpg" alt="Équipement de silo">
-        </div>
+<header>
+  <div class="wrap">
+    <a href="#top" class="brand">
+      <img src="https://avatars.mds.yandex.net/get-znatoki/470774/2a00000182a6523df4016ec5dcc5c66a4efc/orig" alt="DIGIBOX MEDIA λογότυπο">
+      <div>
+        <h1>DIGIBOX MEDIA LTD</h1>
+        <p class="tagline">Digital Media • Social • Campaigns • Creative Studio — Λεμεσός, Κύπρος</p>
       </div>
+    </a>
+  </div>
+</header>
+
+<nav>
+  <div class="navwrap">
+    <a href="#about">Σχετικά</a>
+    <a href="#services">Υπηρεσίες</a>
+    <a href="#strategy">Digital Strategy</a>
+    <a href="#gallery">Portfolio</a>
+    <a href="#contact">Επικοινωνία</a>
+  </div>
+</nav>
+
+<section class="hero" id="top">
+  <div class="panel">
+    <h2>Ιστορίες που «παίζουν» σε κάθε οθόνη.</h2>
+    <p>
+      Η <strong>DIGIBOX MEDIA LTD</strong> είναι digital agency με έδρα τη Λεμεσό,
+      που σχεδιάζει καμπάνιες, social περιεχόμενο και creative assets για brands
+      που θέλουν καθαρό μήνυμα, σωστό targeting και επαγγελματική εικόνα.
+    </p>
+    <div class="tags">
+      <span class="pill">📱 Social Media Management</span>
+      <span class="pill">🎯 Performance Campaigns</span>
+      <span class="pill green">🎥 Video & Creative Content</span>
+      <span class="pill">🌐 Landing Pages & Microsites</span>
+    </div>
+    <div class="cta">
+      <a class="btn" href="mailto:support@alvarixt.shop?subject=DIGIBOX%20MEDIA%20Inquiry">✉️ support@alvarixt.shop</a>
+      <a class="btn secondary" href="tel:+35796513262">📞 +357 96 513262</a>
     </div>
   </div>
+  <img src="https://avatars.mds.yandex.net/i?id=fb0551cde3223499101152278d42db50be8ee87e-4504218-images-thumbs&n=13" alt="Οθόνες, media και creative setup">
+</section>
 
-  <!-- About -->
-  <section id="about" class="container">
-    <h2>À propos de nous</h2>
-    <p class="muted">
-      HUNANIMA conçoit des machines agricoles pratiques, avec des commandes simples et une maintenance facile.  
-      Notre objectif : des outils qui démarrent chaque matin et font gagner des heures aux champs.
-    </p>
-    <div class="cards" style="margin-top:12px">
-      <article class="card reveal" style="animation-delay:.00s"><strong>Fiabilité :</strong> Moins de capteurs, mécanique éprouvée, entretien simple.</article>
-      <article class="card reveal" style="animation-delay:.08s"><strong>Adaptabilité :</strong> Accessoires pour récolte, fourrage et manutention.</article>
-      <article class="card reveal" style="animation-delay:.16s"><strong>Support :</strong> Conseils pièces et entretien.</article>
-      <article class="card reveal" style="animation-delay:.24s"><strong>Valeur :</strong> Spécifications solides sans extras inutiles.</article>
+<section id="about" class="section">
+  <h2>Σχετικά με τη DIGIBOX MEDIA LTD</h2>
+  <p>
+    Συνδέουμε στρατηγική, design και data για να δημιουργούμε digital παρουσία που
+    ξεχωρίζει σε social, search και display. Στόχος μας: καθαρό brand story, σταθερή
+    εικόνα και μετρήσιμα αποτελέσματα.
+  </p>
+</section>
+
+<section id="services" class="section">
+  <h2>Υπηρεσίες</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Social Media & Content</h3>
+      <p>Δημιουργία περιεχομένου, calendar, posts, stories και creatives προσαρμοσμένα στο brand.</p>
     </div>
-  </section>
-
-  <!-- Products -->
-  <section id="products" class="container">
-    <h2>Produits</h2>
-    <div class="cards">
-      <article class="card reveal" style="animation-delay:.00s">
-        <h3>Mini Moissonneuse</h3>
-        <p>Récolte compacte pour petites parcelles ; transmission simple et faible consommation.</p>
-      </article>
-      <article class="card reveal" style="animation-delay:.08s">
-        <h3>Outils de Fourrage</h3>
-        <p>Accessoires de coupe et ramassage adaptés aux tracteurs de puissance moyenne.</p>
-      </article>
-      <article class="card reveal" style="animation-delay:.16s">
-        <h3>Silos & Manutention</h3>
-        <p>Chargeurs et vis de silo avec commandes simples.</p>
-      </article>
-      <article class="card reveal" style="animation-delay:.24s">
-        <h3>Kits de Service</h3>
-        <p>Filtres, courroies et fluides regroupés pour maximiser le temps de fonctionnement.</p>
-      </article>
+    <div class="card">
+      <h3>Digital Campaigns</h3>
+      <p>Facebook/Instagram, Google, YouTube & display καμπάνιες με performance στόχους.</p>
     </div>
-  </section>
-
-  <!-- Gallery -->
-  <section id="gallery" class="container">
-    <h2>Galerie</h2>
-    <div class="gallery">
-      <img src="https://i.pinimg.com/550x/a9/df/51/a9df5172829f8c05f5b92f97553d41ae.jpg" alt="Tracteur au champ">
-      <img src="http://ogden_images.s3.amazonaws.com/www.motherearthnews.com/images/2014/11/22234423/Boaz-Mini-Combine-jpg.jpg" alt="Mini moissonneuse gros plan">
-      <img src="https://krs-agro.ru/products/zagotovka_kormov/elho/19/7.jpg" alt="Équipement de fourrage">
-      <img src="https://img.mod-network.net/files/images/6218ac69d37fb/SimpleFarmSilov1000_6222.jpg" alt="Chargeur de silo">
+    <div class="card">
+      <h3>Branding Assets</h3>
+      <p>Visuals, banners, video snippets και presentation υλικό για online & events.</p>
     </div>
-  </section>
-
-  <!-- Notre Formule -->
-  <section id="formula" class="container">
-    <h2>Notre Formule (10 Points Clés)</h2>
-    <div class="formula">
-      <ol>
-        <li><strong>Design Simple :</strong> Commandes intuitives, pièces accessibles.</li>
-        <li><strong>Taille Adaptée :</strong> Puissance calibrée aux parcelles et tâches.</li>
-        <li><strong>Économie de Carburant :</strong> Moteurs et transmissions efficaces.</li>
-        <li><strong>Durabilité :</strong> Pièces d’usure renforcées ; pièces de rechange faciles.</li>
-        <li><strong>Sécurité :</strong> Protections, prise de force sécurisée, étiquettes claires.</li>
-        <li><strong>Maintenance :</strong> Kits de service et plannings inclus.</li>
-        <li><strong>Polyvalence :</strong> Un tracteur, plusieurs accessoires.</li>
-        <li><strong>Disponibilité :</strong> Devis rapides et délais réalistes.</li>
-        <li><strong>Formation :</strong> Initiation simple à la livraison.</li>
-        <li><strong>Suivi :</strong> Assistance téléphonique/email et conseils pièces.</li>
-      </ol>
+    <div class="card">
+      <h3>Landing Pages</h3>
+      <p>Στοχευμένα microsites & σελίδες καμπάνιας που οδηγούν σε leads & sales.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Contact -->
-  <section id="contact" class="container">
-    <h2>Contact</h2>
-    <div class="contact-box">
-      <div><strong>Entreprise :</strong> HUNANIMA</div>
-      <div><strong>Domaine :</strong> Machines Agricoles Simples</div>
-      <div><strong>Adresse :</strong> Avenue Baratier, 95160 Montmorency, France</div>
-      <div><strong>Téléphone :</strong> +33 7 38 50 26 36</div>
-      <div><strong>Email :</strong> admin@tyusex.shop</div>
-      <div class="contact-actions">
-        <a href="mailto:admin@tyusex.shop?subject=Demande%20-%20HUNANIMA%20Machines%20Agricoles" target="_blank" rel="noopener">Envoyer un Email</a>
-        <a href="tel:+33738502636">Appeler</a>
-        <a href="https://wa.me/33738502636" target="_blank" rel="noopener">WhatsApp</a>
-        <a href="https://www.google.com/maps/search/?api=1&query=Avenue+Baratier+95160+Montmorency" target="_blank" rel="noopener">Ouvrir la Carte</a>
-      </div>
+<section id="strategy" class="section">
+  <h2>Πώς Δουλεύουμε</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>1. Brief & Στόχοι</h3>
+      <p>Ορίζουμε μαζί στόχους, κοινό και budget πριν το πρώτο creative.</p>
     </div>
-  </section>
+    <div class="card">
+      <h3>2. Concept & Δημιουργικά</h3>
+      <p>Παράγουμε visuals & μηνύματα που «μιλάνε» στη σωστή γλώσσα.</p>
+    </div>
+    <div class="card">
+      <h3>3. Launch & Optimization</h3>
+      <p>Τρέχουμε καμπάνιες, παρακολουθούμε KPIs και κάνουμε συνεχές fine-tuning.</p>
+    </div>
+    <div class="card">
+      <h3>4. Reporting</h3>
+      <p>Καθαρά reports με insights που βοηθούν τις επόμενες κινήσεις.</p>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    © 2025 HUNANIMA — Tous droits réservés
-  </footer>
+<section id="gallery" class="section">
+  <h2>Portfolio Highlights</h2>
+  <div class="gallery">
+    <img src="https://avatars.mds.yandex.net/get-znatoki/470774/2a00000182a6523df4016ec5dcc5c66a4efc/orig" alt="DIGIBOX MEDIA branding">
+    <img src="https://avatars.mds.yandex.net/i?id=9534f66f3e4cdd702934999cd0f6891fc26c1106-12683358-images-thumbs&n=13" alt="Digital workspace & content δημιουργία">
+  </div>
+</section>
 
-  <script>
-    // Apparition progressive des cartes
-    const observer = new IntersectionObserver(entries=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){ e.target.classList.add('reveal'); observer.unobserve(e.target); }
-      })
-    }, {threshold:.15});
-    document.querySelectorAll('.card').forEach(el=>observer.observe(el));
-  </script>
+<section id="contact" class="section">
+  <h2>Επικοινωνία</h2>
+  <div class="contact-grid">
+    <div>
+      <p>📧 <strong>Email:</strong> <a href="mailto:support@alvarixt.shop">support@alvarixt.shop</a></p>
+      <p>📞 <strong>Τηλέφωνο:</strong> <a href="tel:+35796513262">+357 96 513262</a></p>
+      <p>📍 <strong>Διεύθυνση:</strong> Αγίας Φυλάξεως & Ζήνωνος Ρωσσίδη 2, Floor 1, 3082, Λεμεσός, Κύπρος</p>
+    </div>
+    <div>
+      <p class="muted">
+        Στείλτε μας link στο brand σας, τι χρειάζεστε (social, ads, video, landing page)
+        και ενδεικτικό budget. Θα προτείνουμε καθαρό πλάνο ενεργειών.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 DIGIBOX MEDIA LTD — Digital Media & Creative Studio, Λεμεσός, Κύπρος.</p>
+</footer>
+
 </body>
 </html>
